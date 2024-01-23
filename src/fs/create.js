@@ -11,7 +11,7 @@ const create = async () => {
 
   const __dirname = dirname(fileURLToPath(
     import.meta.url));
-  const errorMsg = 'FS operation failed: File already exists';
+  const errorMsg = 'FS operation failed';
   const fileText = 'I am fresh and young';
   const file = join(__dirname, 'files', 'fresh.txt');
 
