@@ -12,9 +12,17 @@ const random = Math.random();
 
 const unknownObject = async () => {
   if (Math.random() > 0.5) {
-    return await import('./files/a.json');
+    return await import('./files/a.json', {
+        assert: {
+          type: 'json'
+        }
+      })
   } else {
-    return await import('./files/b.json');
+    return await import('./files/b.json', {
+      assert: {
+        type: 'json'
+      }
+    });
   }
 };
 

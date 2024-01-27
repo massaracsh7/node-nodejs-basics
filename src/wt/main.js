@@ -47,7 +47,6 @@ const performCalculations = async () => {
       data: item.status === 'fulfilled' ? item.value.data : null
     }));
     console.log(answer);
-    return answer;
 };
 
 await performCalculations();

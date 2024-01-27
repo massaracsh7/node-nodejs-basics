@@ -18,10 +18,8 @@ const rename = async () => {
     throw new Error(errorMsg);
   } catch (error) {
     if (error.message === errorMsg) {
-      console.error(error.message);
-      return;
+      throw new Error(errorMsg);
     }
-
     try {
       if (!oldFile) {
         throw new Error(errorMsg);
@@ -29,7 +27,7 @@ const rename = async () => {
       await fs.rename(oldFile, newFile);
       console.log('File renamed: wrongFilename.txt to properFilename.md');
     } catch (error) {
-      console.error(errorMsg);
+      throw new Error(errorMsg);
     }
   }
 };

@@ -18,20 +18,18 @@ const copy = async () => {
     throw new Error(errorMsg);
   } catch (error) {
     if (error.message === errorMsg) {
-      console.error(error.message);
-      return;
+      throw new Error(errorMsg);
     }
     try {
       let data = await fs.readdir(file);
       if (!data.length) {
         throw new Error(errorMsg);
-        return;
       }
       await fs.mkdir(fileCopy);
       await Promise.all(data.map((i) => fs.copyFile(`${file}/${i}`, `${fileCopy}/${i}`)))
       console.log('File created', fileCopy);
     } catch (error) {
-      console.error(errorMsg);
+      throw new Error(errorMsg);
     }
   }
 };

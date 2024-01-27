@@ -14,7 +14,7 @@ const list = async () => {
   const folder = join(__dirname, 'files');
   try {
     let data = await fs.readdir(folder);
-    data.forEach((i) => console.log(i));
+    console.log(data);
   }
   catch(error) {
     throw new Error(errorMsg);

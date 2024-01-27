@@ -20,10 +20,8 @@ const create = async () => {
     throw new Error(errorMsg);
   } catch(error) {
     if (error.message === errorMsg) {
-      console.error(error.message);
-      return;
+      throw new Error(errorMsg);
     }
-
     try {
       await fs.writeFile(file, fileText);
       console.log('File created', file);

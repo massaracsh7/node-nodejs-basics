@@ -22,7 +22,7 @@ const write = async () => {
       });
     console.log('Write, please, something:');
   } catch (error) {
-    console.error(`Error`);
+    throw error;
   }
 
 };
